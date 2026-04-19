@@ -22,7 +22,8 @@ import {
     ChevronDown,
     LayoutGrid,
     MessageSquare,
-    Globe
+    Globe,
+    Wand2
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -291,7 +292,7 @@ export default function Home() {
                             ))}
                         </div>
                     </div>
-                </div>
+                </main>
             </div>
 
             {/* Trustpilot / Testimonials Section */}
