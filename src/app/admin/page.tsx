@@ -33,14 +33,12 @@ export default function AdminPage() {
         const res = await fetch("/api/admin/shop");
         const json = await res.json();
         if (json.categories && json.products) {
-            // If empty, suggest importing defaults
             setData(json);
         }
         setLoading(false);
     };
 
     const handleLogin = () => {
-        // Basic check client-side, real check server-side
         if (password) {
             setIsLoggedIn(true);
         }
@@ -101,7 +99,7 @@ export default function AdminPage() {
                         <div className="w-12 h-12 bg-[#ffcd00] rounded-2xl flex items-center justify-center mx-auto mb-6">
                             <Wand2 className="text-black" />
                         </div>
-                        <h1 className="text-3xl font-black uppercase italic italic">Admin <span className="text-[#ffcd00]">Nexus</span></h1>
+                        <h1 className="text-3xl font-black uppercase italic italic text-white">Admin <span className="text-[#ffcd00]">Nexus</span></h1>
                         <p className="text-white/40 mt-2 font-medium">Please enter your magic key</p>
                     </div>
 
@@ -128,7 +126,6 @@ export default function AdminPage() {
 
     return (
         <div className="min-h-screen bg-[#121212] text-white font-sans flex overflow-hidden">
-            {/* Sidebar */}
             <aside className="w-80 bg-[#1a1a1a] border-r border-white/5 flex flex-col p-8 lg:p-10">
                 <Link href="/" className="flex items-center gap-3 mb-16">
                     <div className="w-8 h-8 bg-[#ffcd00] rounded-xl flex items-center justify-center">
@@ -173,7 +170,6 @@ export default function AdminPage() {
                 </div>
             </aside>
 
-            {/* Main Content */}
             <main className="flex-1 overflow-y-auto p-10 lg:p-20">
                 <div className="flex items-center justify-between mb-12">
                     <div>

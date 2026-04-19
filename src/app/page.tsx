@@ -36,7 +36,6 @@ export default function Home() {
                 if (data.categories && data.products && data.categories.length > 0) {
                     setShopData(data);
                 } else {
-                    // Fallback to defaults if Redis is empty
                     setShopData({
                         categories: [
                             {
@@ -70,7 +69,6 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-[#121212] text-white font-sans selection:bg-[#ffcd00]/30 selection:text-white">
-            {/* Header */}
             <header className="sticky top-0 z-[100] bg-[#1a1a1a] border-b border-white/5 shadow-xl">
                 <div className="max-w-[1400px] mx-auto px-4 h-16 flex items-center justify-between gap-8">
                     <Link href="/" className="flex items-center gap-2 shrink-0">
@@ -92,7 +90,7 @@ export default function Home() {
                     <div className="flex items-center gap-6">
                         <div className="hidden lg:flex items-center gap-2 text-[12px] font-bold text-white/40 hover:text-[#ffcd00] transition-colors cursor-pointer tracking-widest uppercase">
                             <Globe size={16} />
-                            <span>DEU</span>
+                            <span>EN</span>
                         </div>
                         <div className="relative cursor-pointer hover:text-[#ffcd00] transition-colors">
                             <ShoppingCart size={22} />
@@ -106,9 +104,7 @@ export default function Home() {
                 </div>
             </header>
 
-            {/* Main Content */}
             <div className="max-w-[1400px] mx-auto px-4 py-8 flex gap-10">
-                {/* Sidebar */}
                 <aside className="w-72 shrink-0 hidden lg:block">
                     <div className="space-y-10 sticky top-28">
                         {!loading && shopData.categories.map(cat => (
@@ -134,13 +130,12 @@ export default function Home() {
 
                         <div className="px-4 py-6 bg-gradient-to-br from-[#ffcd00]/10 to-transparent rounded-2xl border border-[#ffcd00]/10 mt-10">
                             <h4 className="text-[11px] font-black text-[#ffcd00] uppercase tracking-widest mb-2">Partner Program</h4>
-                            <p className="text-[12px] text-white/40 font-bold mb-4">Become part of the elite and earn from the Spiral.</p>
+                            <p className="text-[12px] text-white/40 font-bold mb-4">Join our elite team and earn from the Spiral's success.</p>
                             <button className="w-full py-2.5 bg-white/5 hover:bg-[#ffcd00] hover:text-black rounded-lg text-[11px] font-black uppercase transition-all text-white border border-white/10">Apply Now</button>
                         </div>
                     </div>
                 </aside>
 
-                {/* Grid */}
                 <main className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 text-[11px] font-bold text-white/30 mb-8 uppercase tracking-widest">
                         <Link href="/" className="hover:text-white/60">WizardNexus</Link>
@@ -148,7 +143,6 @@ export default function Home() {
                         <span className="text-white/60">Marketplace</span>
                     </div>
 
-                    {/* Banner */}
                     <div className="relative rounded-[32px] overflow-hidden bg-[#1a1a1a] border border-white/5 mb-12 group">
                         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10" />
                         <img 
@@ -173,11 +167,10 @@ export default function Home() {
                         </div>
                     </div>
 
-                    {/* Product Grid */}
                     <div className="flex items-center justify-between border-b border-white/5 pb-6 mb-8">
                         <div className="flex items-center gap-3">
                             <LayoutGrid size={20} className="text-[#ffcd00]" />
-                            <h2 className="text-2xl font-black uppercase italic tracking-tighter">Featured Offers</h2>
+                            <h2 className="text-2xl font-black uppercase italic tracking-tighter">Best Offers</h2>
                         </div>
                         <div className="flex items-center gap-4">
                             <button className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-xl text-[12px] font-black text-white/40 hover:text-white transition-all border border-white/5 uppercase">
@@ -223,7 +216,7 @@ export default function Home() {
 
                                         <div className="pt-6 border-t border-white/5 flex items-center justify-between">
                                             <div className="flex flex-col">
-                                                <span className="text-[10px] text-white/30 font-black uppercase tracking-widest">Price</span>
+                                                <span className="text-[10px] text-white/30 font-black uppercase tracking-widest">Price from</span>
                                                 <span className="text-2xl font-black text-white">{deal.price}</span>
                                             </div>
                                             <button className="px-6 py-3 bg-white/5 group-hover:bg-[#ffcd00] group-hover:text-black rounded-xl text-[12px] font-black uppercase transition-all border border-white/10 shadow-xl">
@@ -238,11 +231,10 @@ export default function Home() {
                 </main>
             </div>
 
-            {/* Testimonials */}
             <section className="bg-white/[0.02] border-y border-white/5 py-32 px-4 mt-20">
                 <div className="max-w-[1400px] mx-auto text-center">
                     <h2 className="text-[11px] font-black text-[#ffcd00] uppercase tracking-[0.6em] mb-4">Verified</h2>
-                    <h3 className="text-4xl font-black italic uppercase tracking-tighter mb-16 underline decoration-[#ffcd00]/50 decoration-4 underline-offset-8">Council Testimonials</h3>
+                    <h3 className="text-4xl font-black italic uppercase tracking-tighter mb-16 underline decoration-[#ffcd00]/50 decoration-4 underline-offset-8">Community Testimonials</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
@@ -265,7 +257,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Footer */}
             <footer className="bg-[#0a0a0a] pt-32 pb-16 px-4">
                 <div className="max-w-[1400px] mx-auto text-center md:text-left">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-20 mb-24">
@@ -308,7 +299,7 @@ export default function Home() {
                             <span>Not affiliated with KingsIsle.</span>
                         </div>
                         <div className="flex gap-12">
-                            <span className="hover:text-white transition-colors cursor-pointer">AGB</span>
+                            <span className="hover:text-white transition-colors cursor-pointer">Terms</span>
                             <span className="hover:text-white transition-colors cursor-pointer">Privacy</span>
                         </div>
                     </div>
